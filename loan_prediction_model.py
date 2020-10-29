@@ -4,15 +4,17 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn import metrics
+from sklearn.metrics import accuracy_score
 import warnings
 import pickle
 
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv('../loan_prediction/train_u6lujuX_CVtuZ9i.csv')
+data = pd.read_csv('../loan_prediction/test_Y3wMUE5_7gLdaTN.csv')
 df = pd.read_csv("../loan_prediction/train_u6lujuX_CVtuZ9i.csv")
 
-data['LoanAmount'] = data['LoanAmount'].fillna(data['LoanAmount'].mean())
+data['LoanAmount']=data['LoanAmount'].fillna(data['LoanAmount'].mean())
 data['Credit_History']=data['Credit_History'].fillna(data['Credit_History'].median())
 df.dropna(inplace=True)
 df['Loan_Status'].replace('N',0,inplace=True)
@@ -39,6 +41,9 @@ Y=df2['Loan_Status']
 x_train,x_test,y_train,y_test=train_test_split(X,Y,test_size=0.2,random_state=6)
 log=LogisticRegression()
 log.fit(x_train,y_train)
+x1 = log.predict(x_test)
+print(accuracy_score(y_test,x1))
+print(x_train)
 
 pickle.dump(log,open('model.pkl','wb'))
 model=pickle.load(open('model.pkl','rb'))

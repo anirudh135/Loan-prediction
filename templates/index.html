@@ -5,132 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
   <!-- CSS  -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Load predictor app</a></li>
-      </ul>
+<body style="background-image: url('https://image.freepik.com/free-photo/smooth-dark-blue-with-black-vignette-studio-well-use-as-background-business-report-digital-website-template_1258-748.jpg'); color:white;">
+     
+    
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Load predictor app</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <div class="jumbotron" style="text-align: center;background: none;padding-bottom: 1rem;padding-top: 6rem;">
+	  <h1>Welcome to Loan Predictor</h1>
+	  <p>Please fill in the details below:</p>
+	</div>
+
+
+  
+
+    <div class="row">
+    	<div class="col-4"></div>
+    	<div class="col-4">
+		    <form action='/predict' method="post">
+		      	<div class="form-group">
+		            <label for="first_name"><b>Credit History</b></label>
+		            <br>
+		          <input placeholder="Credit History" name="Credit History" id="first_name" type="text" class="validate form-control">
+		        </div>
+		        <div class="form-group">
+		          <label for="last_name"><b>Property area <area shape="" coords="" href="" alt=""> </b></label>
+		            <br>
+		          <input id="last_name" name="Property area" placeholder="Property Area"  type="text" class="validate form-control">
+		        </div>
+		        <div class="form-group">
+		            <label for="_name"><b>Gender</b></label>
+		            <br>
+		          <input id="_name" name="Gender" placeholder="1 for Male, 0 for female" type="text" class="validate form-control">
+		        </div>
+		        <div class="form-group">
+		            <label for="_name"><b>Martial Status</b></label>
+		            <br>
+		          <input id="_name" name="Martial status" placeholder="1 for Married, 0 for Single" type="text" class="validate form-control">
+		        </div>
+
+		      	<div style="text-align: center;">
+		          <button type="submit" class="btn btn-success">Predict Probability
+		          </button>
+		      	</div>
+		    </form>
+	    </div>
     </div>
-  </nav>
-
-
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text"> Loan Prediction</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Predict the approval of loan
-        <br>
-        </h5>
-      </div>
-
-              <div class="center>
-    <form action='/predict' method="post" class="col s12">
-      <div class="">
-        <div class="input-field col s4">
-            <label for="first_name"><b>Credit History</b></label>
-            <br>
-          <input placeholder="Credit History" name="Credit History" id="first_name" type="text" class="validate">
-        </div>
-        <div class="input-field col s4">
-
-          <label for="last_name"><b>Property area <area shape="" coords="" href="" alt=""> </b></label>
-            <br>
-          <input id="last_name" name="Property area" placeholder="Property area"  type="text" class="validate">
-
-        </div>
-
-        <div class="input-field col s4">
-            <label for="_name"><b>Gender</b></label>
-            <br>
-          <input id="_name" name="Gender" placeholder="1 for Male, 0 for gemale" type="text" class="validate">
-
-        </div>
-
-        <div class="input-field col s4">
-            <label for="_name"><b>Martial Status</b></label>
-            <br>
-          <input id="_name" name="Martial status" placeholder="1 for Married, 0 for Single" type="text" class="validate">
-
-        </div>
-      </div>
-
-      <div class="row center">
-
-          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
-      </div>
-    </form>
-      </div>
-
-      <br>
-        {{pred}}<br>
-
-    </div>
-  </div>
-
-
-    <br><br>
-  </div>
-  </div>>
-
-  <br><br>
-  </div>
-  </div>>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src=".js/materialize.js"></script>
-  <script src="js/init.js"></script>
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color:black;">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Please check your result</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        Your prediction is: {{pred}}
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+  </div> -->
+  <h1 style="justify-content: center; text-align: center;">
+	  {{pred}}
+  </h1>
 
 
   </body>
+  <script>
+  	$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').trigger('focus')
+	})
+  </script>
 </html>
