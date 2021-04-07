@@ -21,7 +21,7 @@ def predict():
     prediction=model.predict_proba(final)
     output='{0:.{1}f}'.format(prediction[0][1], 2)
     print(output)
-    if(float(output)>0.7):
+    if(float(output)>0.5):
         return render_template('index.html',pred='Your Loan will be approved')
     else:
         return render_template('index.html',pred="Your Loan will not be approved")
